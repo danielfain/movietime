@@ -42,7 +42,10 @@ class Trending extends Component<TrendingProps, TrendingState> {
             {this.state.media.map((item, index) => (
               <li>
                 <img src={process.env.REACT_APP_POSTER_URL + item.poster_path}  alt={item.title} />
-                <label style={{ color: "azure", marginLeft: "1rem" }} >{index + 1}</label>
+                <div className="trending-labels">
+                  <label style={{ color: "azure" }} >{index + 1}</label>
+                  <label style={{ color: "gold" }}>{item.vote_average} / 10</label>
+                </div>
               </li>
             ))}
           </ul>

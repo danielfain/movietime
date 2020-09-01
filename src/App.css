@@ -37,3 +37,9 @@
     align-items: center;
     margin-bottom: 1rem;
 }
+
+.trending-labels {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
