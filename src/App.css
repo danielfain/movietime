@@ -1,0 +1,39 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 5% 1fr 1fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". . trending-container"
+        ". . ."
+        ". . .";
+}
+
+.trending-container {
+    grid-area: trending-container;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5%;
+    grid-template-areas:
+        "trending-title"
+        "trending-content";
+}
+
+.trending-container h1 {
+    grid-area: trending-title;
+    display: flex;
+    justify-content: center;
+}
+
+.trending-content {
+    grid-area: trending-content;
+    display: flex;
+    justify-content: center;
+}
+
+.trending-content li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}

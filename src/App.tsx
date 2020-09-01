@@ -1,10 +1,13 @@
 import React from 'react';
 import Trending from "./Trending";
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Trending />
+      <div className="grid-container">
+        <Trending />
+      </div>
     </div>
   );
 }

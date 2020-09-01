@@ -35,13 +35,19 @@ class Trending extends Component<TrendingProps, TrendingState> {
 
   render() {
     return (
-      <ul>
-        {this.state.media.map(item => (
-          <li>
-            <img src={process.env.REACT_APP_POSTER_URL + item.poster_path}  alt={item.title} />
-          </li>
-        ))}
-      </ul>
+      <div className="trending-container">
+        <h1 style={{ color: "azure" }}>Trending</h1>
+        <div className="trending-content">
+          <ul style={{ listStyleType: "none", margin: 0, padding: 0 }}>
+            {this.state.media.map((item, index) => (
+              <li>
+                <img src={process.env.REACT_APP_POSTER_URL + item.poster_path}  alt={item.title} />
+                <label style={{ color: "azure", marginLeft: "1rem" }} >{index + 1}</label>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     );
   }
 }
