@@ -1,10 +1,10 @@
 import React from 'react';
-import TrendingContainer from "./TrendingContainer";
+import Trending from "./Trending";
 
 function App() {
   return (
     <div className="App">
-      <TrendingContainer />
+      <Trending />
     </div>
   );
 }

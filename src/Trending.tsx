@@ -15,7 +15,7 @@ type TrendingState = {
 
 type TrendingProps = {}
 
-class TrendingContainer extends Component<TrendingProps, TrendingState> {
+class Trending extends Component<TrendingProps, TrendingState> {
   constructor(props: TrendingProps) {
     super(props);
     this.state = {
@@ -27,7 +27,8 @@ class TrendingContainer extends Component<TrendingProps, TrendingState> {
     fetch(`${API_URL}/trending/all/week?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => {
-        const { results } = data;
+        let { results } = data;
+        results = results.slice(0, 5);
         this.setState({ media: results } );
       })
   }
@@ -37,8 +38,7 @@ class TrendingContainer extends Component<TrendingProps, TrendingState> {
       <ul>
         {this.state.media.map(item => (
           <li>
-            {item.title}
-            <img src={process.env.REACT_APP_IMAGE_URL + item.poster_path}  alt="Poster" />
+            <img src={process.env.REACT_APP_POSTER_URL + item.poster_path}  alt={item.title} />
           </li>
         ))}
       </ul>
@@ -46,4 +46,4 @@ class TrendingContainer extends Component<TrendingProps, TrendingState> {
   }
 }
 
-export default TrendingContainer;
+export default Trending;
