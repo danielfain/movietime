@@ -6,3 +6,7 @@ html {
 h1 {
     color: azure;
 }
+
+img {
+    max-width: 100%;
+}

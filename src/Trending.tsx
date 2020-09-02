@@ -2,7 +2,7 @@ import React from 'react';
 
 const API_URL = process.env.REACT_APP_API_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
-const POSTER_URL = process.env.REACT_APP_POSTER_URL;
+const POSTER_URL = process.env.REACT_APP_TRENDING_POSTER_URL;
 
 type TrendingMedia = {
   id: number;

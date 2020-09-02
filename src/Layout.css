@@ -1,20 +1,18 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 5rem 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(5rem, 1fr));
     grid-template-areas:
-        ". title ."
+        "title title title"
         ". . trending-container"
-        ". . ."
+        "in-theaters-container in-theaters-container ."
         ". . .";
 }
 
 .trending-container {
     grid-area: trending-container;
     display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 5%;
+    grid-template-rows: 5rem;
     grid-template-areas:
         "trending-title"
         "trending-content";
@@ -24,6 +22,7 @@
     grid-area: trending-title;
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 .trending-content {
@@ -49,3 +48,21 @@
     display: flex;
     justify-content: center;
 }
+
+.in-theaters-container {
+    grid-area: in-theaters-container;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.in-theaters-container h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.poster-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-row-gap: 1rem;
+}
+
