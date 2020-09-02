@@ -34,7 +34,7 @@ class InTheaters extends React.Component<InTheatersProps, InTheatersState> {
       .then(res => res.json())
       .then((data: InTheatersAPIResponse) => {
         let results: Array<InTheatersMedia> = data.results;
-        results = results.slice(0, 10);
+        results = results.slice(0, 8);
         this.setState({ media: results } );
       })
       .catch(error => console.error(error));
