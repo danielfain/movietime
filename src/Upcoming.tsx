@@ -35,9 +35,18 @@ class Upcoming extends React.Component<UpcomingProps, UpcomingState> {
       .then((data: UpcomingAPIResponse) => {
         let results: Array<UpcomingMedia> = data.results;
         results = results.slice(0, 5);
+        this.sortReleaseDates(results);
         this.setState({ media: results } );
       })
       .catch(error => console.error(error));
+  }
+
+  sortReleaseDates(media: Array<UpcomingMedia>): void {
+    media.sort((a, b) => {
+      const aDate = new Date(a.release_date);
+      const bDate = new Date(b.release_date);
+      return aDate.getTime() - bDate.getTime();
+    });
   }
 
   render(): JSX.Element {
