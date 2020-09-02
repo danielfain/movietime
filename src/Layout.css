@@ -1,9 +1,9 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 5% 1fr 1fr 1fr;
+    grid-template-rows: 5rem 1fr 1fr 1fr;
     grid-template-areas:
-        ". . ."
+        ". title ."
         ". . trending-container"
         ". . ."
         ". . .";
@@ -42,4 +42,10 @@
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
+}
+
+.title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
 }
