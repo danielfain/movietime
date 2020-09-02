@@ -1,12 +1,12 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(auto-fill, minmax(5rem, 1fr));
     grid-template-areas:
-        "title title title"
-        ". . trending-container"
-        "in-theaters-container in-theaters-container ."
-        ". . .";
+        "title title title title"
+        "upcoming-container . . trending-container"
+        "in-theaters-container in-theaters-container . ."
+        ". . . .";
 }
 
 .trending-container {
@@ -16,6 +16,8 @@
     grid-template-areas:
         "trending-title"
         "trending-content";
+    border-left-style: ridge;
+    border-color: azure;
 }
 
 .trending-container h1 {
@@ -47,12 +49,14 @@
     grid-area: title;
     display: flex;
     justify-content: center;
+    border-bottom-style: ridge;
+    border-color: azure;
 }
 
 .in-theaters-container {
     grid-area: in-theaters-container;
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: 5rem;
 }
 
 .in-theaters-container h1 {
@@ -66,3 +70,32 @@
     grid-row-gap: 1rem;
 }
 
+
+.upcoming-container {
+    grid-area: upcoming-container;
+    display: grid;
+    grid-template-rows: 5rem;
+    border-right-style: ridge;
+    border-color: azure;
+}
+.upcoming-container h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.upcoming-content {
+    display: flex;
+    justify-content: center;
+}
+
+.upcoming-labels {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.upcoming-content li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
