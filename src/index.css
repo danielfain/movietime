@@ -3,10 +3,14 @@ html {
     font-family: 'Manrope', sans-serif;
 }
 
-h1 {
+h1, a {
     color: azure;
 }
 
-img {
-    max-width: 100%;
+svg {
+    fill: azure;
+}
+
+a:link {
+    text-decoration: none;
 }
