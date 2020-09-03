@@ -1,10 +1,10 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(5rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
     grid-template-areas:
         "title title title title"
-        "upcoming-container . . trending-container"
+        "upcoming-container movie-container tv-container trending-container"
         "in-theaters-container in-theaters-container . ."
         ". . . .";
 }
@@ -24,7 +24,7 @@
     grid-area: trending-title;
     display: flex;
     justify-content: center;
-    flex: 1;
+    align-items: center;
 }
 
 .trending-content {
@@ -81,6 +81,7 @@
 .upcoming-container h1 {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .upcoming-content {
@@ -98,4 +99,84 @@
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+}
+
+.movie-container {
+    grid-area: movie-container;
+    display: grid;
+    grid-template-rows: 5rem;
+}
+
+.movie-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-content {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 275px));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 150px));
+    grid-gap: 1rem;
+}
+
+.movie-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid azure;
+    border-radius: 16px;
+    background-color: azure;
+    color: rgb(22, 22, 29);
+    box-shadow: 0 2px 4px 0 azure;
+    transition: height 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+    box-shadow: 5px 5px 10px 0 azure;
+}
+
+.tv-container {
+    grid-area: tv-container;
+    display: grid;
+    grid-template-rows: 5rem;
+}
+
+.tv-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tv-content {
+    display: flex;
+    justify-content: center;
+}
+
+.tv-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 275px));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 150px));
+    grid-gap: 1rem;
+}
+
+.tv-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid azure;
+    border-radius: 16px;
+    background-color: azure;
+    color: rgb(22, 22, 29);
+    box-shadow: 0 2px 4px 0 azure;
+    transition: height 0.3s, box-shadow 0.3s;
+}
+
+.tv-card:hover {
+    box-shadow: 5px 5px 10px 0 azure;
 }
