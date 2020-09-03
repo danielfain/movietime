@@ -46,7 +46,7 @@ class InTheaters extends React.Component<InTheatersProps, InTheatersState> {
         <h1>In Theaters</h1>
         <div className="poster-container">
           {this.state.media.map(item => (
-            <img src={POSTER_URL + item.poster_path}  alt={item.title} />
+            <img src={POSTER_URL + item.poster_path}  alt={item.title} key={item.id} />
           ))}
         </div>
       </div>
