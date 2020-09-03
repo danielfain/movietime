@@ -30,7 +30,7 @@ class Trending extends React.Component<TrendingProps, TrendingState> {
   }
 
   componentDidMount(): void {
-    fetch(`${API_URL}/trending/all/week?api_key=${API_KEY}`)
+    fetch(`${API_URL}/trending/all/day?api_key=${API_KEY}`)
       .then(res => res.json())
       .then((data: TrendingAPIResponse) => {
         let results: Array<TrendingMedia> = data.results;
