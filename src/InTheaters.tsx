@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const API_URL = process.env.REACT_APP_API_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -15,43 +15,30 @@ type InTheatersAPIResponse = {
   results: Array<InTheatersMedia>;
 };
 
-type InTheatersState = {
-  media: Array<InTheatersMedia>;
-};
+const InTheaters: React.FunctionComponent = () => {
+  const [media, setMedia] = useState<Array<InTheatersMedia>>([]);
 
-type InTheatersProps = {};
-
-class InTheaters extends React.Component<InTheatersProps, InTheatersState> {
-  constructor(props: InTheatersProps) {
-    super(props);
-    this.state = {
-      media: [],
-    }
-  }
-
-  componentDidMount(): void {
+  useEffect(() => {
     fetch(`${API_URL}/movie/now_playing?api_key=${API_KEY}`)
       .then(res => res.json())
       .then((data: InTheatersAPIResponse) => {
         let results: Array<InTheatersMedia> = data.results;
         results = results.slice(0, 8);
-        this.setState({ media: results } );
+        setMedia(results);
       })
       .catch(error => console.error(error));
-  }
+  });
 
-  render(): JSX.Element {
-    return (
-      <div className="in-theaters-container">
-        <h1>In Theaters</h1>
-        <div className="poster-container">
-          {this.state.media.map(item => (
-            <img src={POSTER_URL + item.poster_path}  alt={item.title} key={item.id} />
-          ))}
-        </div>
+  return (
+    <div className="in-theaters-container">
+      <h1>In Theaters</h1>
+      <div className="poster-container">
+        {media.map(item => (
+          <img src={POSTER_URL + item.poster_path}  alt={item.title} key={item.id} />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default InTheaters;
