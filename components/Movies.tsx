@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
-const Movie: React.FunctionComponent = () => (
+const Movies: React.FunctionComponent = () => (
   <div className="movie-container">
     <div className="movie-title">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" className="movie-icon" viewBox="0 0 24 24" role="presentation">
@@ -12,12 +11,12 @@ const Movie: React.FunctionComponent = () => (
     </div>
     <div className="movie-content">
       <div className="movie-cards">
-        <Link className="movie-card" to="/movies/top/rated">Top Rated</Link>
-        <Link className="movie-card" to="/movies/top/grossing">Top Grossing</Link>
-        <Link className="movie-card" to="/movies/genre">By Genre</Link>
+        <a className="movie-card" href="/movies/top/rated">Top Rated</a>
+        <a className="movie-card" href="/movies/top/grossing">Top Grossing</a>
+        <a className="movie-card" href="/movies/genre">By Genre</a>
       </div>
     </div>
   </div>
 );
 
-export default Movie;
+export default Movies;

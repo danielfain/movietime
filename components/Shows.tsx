@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const TV: React.FunctionComponent = () => (
+const Shows: React.FunctionComponent = () => (
   <div className="tv-container">
     <div className="tv-title">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" className="tv-icon" viewBox="0 0 24 24" role="presentation">
@@ -12,11 +11,11 @@ const TV: React.FunctionComponent = () => (
     </div>
     <div className="tv-content">
       <div className="tv-cards">
-        <Link className="tv-card" to="/tv/top/rated">Top Rated</Link>
-        <Link className="tv-card" to="/tv/genre">By Genre</Link>
+        <a className="tv-card" href="/tv/top/rated">Top Rated</a>
+        <a className="tv-card" href="/tv/genre">By Genre</a>
       </div>
     </div>
   </div>
 );
 
-export default TV;
+export default Shows;
