@@ -17,13 +17,13 @@ const Trending: React.FC<TrendingProps> = ({ results }) => (
   <div className="trending-container">
     <h1>Trending</h1>
     <div className="trending-content">
-      <ul style={{ listStyleType: "none", margin: 0, padding: 0 }}>
+      <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
         {results.map((item, index) => (
           <li key={item.id}>
             <img src={POSTER_URL + item.poster_path}  alt={item.title} />
             <div className="trending-labels">
-              <label style={{ color: "azure" }}>{index + 1}</label>
-              <label style={{ color: "gold" }}>{item.vote_average} / 10</label>
+              <label style={{ color: 'azure' }}>{index + 1}</label>
+              <label style={{ color: 'gold' }}>{item.vote_average} / 10</label>
             </div>
           </li>
         ))}

@@ -1,14 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import type { UpcomingMedia } from '../../components/Upcoming';
+
 const API_URL = process.env.REACT_APP_API_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
-
-type UpcomingMedia = {
-  id: number;
-  title: string;
-  poster_path: string;
-  release_date: string;
-};
 
 type UpcomingAPIResponse = {
   results: Array<UpcomingMedia>;
@@ -22,7 +17,7 @@ function sortReleaseDates(unsortedMedia: Array<UpcomingMedia>): void {
   });
 }
 
-export async function getUpcoming() {
+export async function getUpcoming(): Promise<Array<UpcomingMedia>> {
   let results: Array<UpcomingMedia> = [];
 
   await fetch(`${API_URL}/movie/upcoming?api_key=${API_KEY}`)
@@ -38,7 +33,7 @@ export async function getUpcoming() {
   return results;
 }
 
-const upcoming = async (req: NextApiRequest, res: NextApiResponse<UpcomingAPIResponse>) => {
+const upcoming = async (req: NextApiRequest, res: NextApiResponse<UpcomingAPIResponse>): Promise<void> => {
   const results: Array<UpcomingMedia> = await getUpcoming();
   res.status(200).json({ results });
 };

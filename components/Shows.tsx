@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Shows: React.FC = () => (
   <div className="tv-container">
