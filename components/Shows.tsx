@@ -1,6 +1,6 @@
 import React from "react";
 
-const Shows: React.FunctionComponent = () => (
+const Shows: React.FC = () => (
   <div className="tv-container">
     <div className="tv-title">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" className="tv-icon" viewBox="0 0 24 24" role="presentation">

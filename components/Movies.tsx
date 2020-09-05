@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Movies: React.FunctionComponent = () => (
+const Movies: React.FC = () => (
   <div className="movie-container">
     <div className="movie-title">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" className="movie-icon" viewBox="0 0 24 24" role="presentation">
