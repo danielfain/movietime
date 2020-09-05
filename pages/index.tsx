@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 import Title from "../components/Title";
 import Upcoming from "../components/Upcoming";
@@ -43,7 +43,7 @@ const Home: React.FC<HomeProps> = ({ trending, upcoming, playing }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const trending = await getTrending();
   const upcoming = await getUpcoming();
   const playing = await getPlaying();
