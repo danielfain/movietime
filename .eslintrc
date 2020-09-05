@@ -7,7 +7,10 @@
   "rules": {
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
-    "@typescript-eslint/restrict-template-expressions": "off"
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "single"],
+    "@typescript-eslint/no-unused-vars": "off"
   },
   "extends": [
     "eslint:recommended",
