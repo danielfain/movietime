@@ -1,0 +1,39 @@
+.container {
+    grid-area: movie-container;
+    display: grid;
+    grid-template-rows: 5rem;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 275px));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 150px));
+    grid-gap: 1rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid azure;
+    border-radius: 16px;
+    background-color: azure;
+    color: rgb(22, 22, 29);
+    box-shadow: 0 2px 4px 0 azure;
+    transition: height 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 10px 0 azure;
+}

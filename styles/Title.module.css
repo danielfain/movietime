@@ -1,0 +1,7 @@
+.title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    border-bottom-style: ridge;
+    border-color: azure;
+}

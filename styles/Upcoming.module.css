@@ -1,0 +1,36 @@
+.container {
+    grid-area: upcoming-container;
+    display: grid;
+    grid-template-rows: 5rem;
+    border-right-style: ridge;
+    border-color: azure;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}

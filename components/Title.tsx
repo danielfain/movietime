@@ -1,7 +1,9 @@
 import React from 'react';
 
+import styles from '../styles/Title.module.css';
+
 const Title: React.FC = () => (
-  <div className="title">
+  <div className={styles.title}>
     <h1>Movie Time</h1>
   </div>
 );

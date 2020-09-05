@@ -1,0 +1,41 @@
+.container {
+    grid-area: trending-container;
+    display: grid;
+    grid-template-rows: 5rem;
+    grid-template-areas:
+      "trending-title"
+      "trending-content";
+    border-left-style: ridge;
+    border-color: azure;
+}
+
+.title {
+    grid-area: trending-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    grid-area: trending-content;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}

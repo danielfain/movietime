@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../styles/Trending.module.css';
+
 const POSTER_URL = process.env.REACT_APP_TRENDING_POSTER_URL;
 
 export type TrendingMedia = {
@@ -14,14 +16,14 @@ type TrendingProps = {
 };
 
 const Trending: React.FC<TrendingProps> = ({ results }) => (
-  <div className="trending-container">
-    <h1>Trending</h1>
-    <div className="trending-content">
-      <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
+  <div className={styles.container}>
+    <h1 className={styles.title}>Trending</h1>
+    <div className={styles.content}>
+      <ul className={styles.list}>
         {results.map((item, index) => (
-          <li key={item.id}>
+          <li key={item.id} className={styles.item}>
             <img src={POSTER_URL + item.poster_path}  alt={item.title} />
-            <div className="trending-labels">
+            <div className={styles.labels}>
               <label style={{ color: 'azure' }}>{index + 1}</label>
               <label style={{ color: 'gold' }}>{item.vote_average} / 10</label>
             </div>

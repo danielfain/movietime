@@ -17,6 +17,8 @@ import { getTrending } from './api/trending';
 import { getPlaying } from './api/playing';
 import { getUpcoming } from './api/upcoming';
 
+import styles from '../styles/Home.module.css';
+
 type HomeProps = {
   trending: Array<TrendingMedia>;
   upcoming: Array<UpcomingMedia>;
@@ -31,7 +33,7 @@ const Home: React.FC<HomeProps> = ({ trending, upcoming, playing }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap" rel="stylesheet" />
       </Head>
-      <div className="grid-container">
+      <div className={styles.container}>
         <Title />
         <Trending results={trending} />
         <Playing results={playing} />
