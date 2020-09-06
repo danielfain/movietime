@@ -16,6 +16,11 @@ export async function getTrending(): Promise<Array<TrendingMedia>> {
     .then(res => res.json())
     .then((data: TrendingAPIResponse) => {
       results = data.results.slice(0, 5);
+      results.forEach(media => {
+        if (!media.title) {
+          media.title = media.original_name;
+        }
+      });
     })
     .catch(error => {
       console.log(error);
@@ -24,7 +29,7 @@ export async function getTrending(): Promise<Array<TrendingMedia>> {
   return results;
 }
 
-const trending = async (req: NextApiRequest, res: NextApiResponse<TrendingAPIResponse>) => {
+const trending = async (req: NextApiRequest, res: NextApiResponse<TrendingAPIResponse>): Promise<void> => {
   const results: Array<TrendingMedia> = await getTrending();
   res.status(200).json({ results });
 };
