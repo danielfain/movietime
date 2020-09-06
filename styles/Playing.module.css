@@ -1,7 +1,8 @@
 .container {
     grid-area: playing-container;
-    display: grid;
-    grid-template-rows: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .title {
@@ -11,6 +12,18 @@
 
 .posters {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-row-gap: 1rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 200px);
+}
+
+@media only screen and (max-width: 1000px) {
+    .posters {
+        grid-template-columns: repeat(2, 200px);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .posters {
+        grid-template-columns: repeat(1, 200px);
+    }
 }

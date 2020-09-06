@@ -12,7 +12,7 @@ const Movies: React.FC = () => (
       <h1>Movies</h1>
     </div>
     <div className={styles.content}>
-      <div className={styles.cards}>
+      <div>
         <a className={styles.card} href="/movies/top/rated">Top Rated</a>
         <a className={styles.card} href="/movies/top/grossing">Top Grossing</a>
         <a className={styles.card} href="/movies/genre">By Genre</a>
