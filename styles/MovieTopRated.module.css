@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+    grid-template-areas:
+        "title title title";
+    grid-gap: 1rem;
+}
+
+.title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+}
+
+.poster {
+    display: flex;
+    justify-content: center;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

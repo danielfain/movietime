@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import styles from '../styles/Movies.module.css';
 
@@ -13,9 +14,15 @@ const Movies: React.FC = () => (
     </div>
     <div className={styles.content}>
       <div>
-        <a className={styles.card} href="/movies/top/rated">Top Rated</a>
-        <a className={styles.card} href="/movies/top/grossing">Top Grossing</a>
-        <a className={styles.card} href="/movies/genre">By Genre</a>
+        <Link href="/movies/top/rated">
+          <a className={styles.card}>Top Rated</a>
+        </Link>
+        <Link href="/movies/top/grossing">
+          <a className={styles.card}>Top Grossing</a>
+        </Link>
+        <Link href="/movies/genre">
+          <a className={styles.card}>By Genre</a>
+        </Link>
       </div>
     </div>
   </div>

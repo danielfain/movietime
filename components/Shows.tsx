@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import styles from '../styles/Shows.module.css';
 
@@ -13,8 +14,12 @@ const Shows: React.FC = () => (
     </div>
     <div className={styles.content}>
       <div>
-        <a className={styles.card} href="/tv/top/rated">Top Rated</a>
-        <a className={styles.card} href="/tv/genre">By Genre</a>
+        <Link href="/tv/top/rated">
+          <a className={styles.card}>Top Rated</a>
+        </Link>
+        <Link href="/tv/genre">
+          <a className={styles.card}>By Genre</a>
+        </Link>
       </div>
     </div>
   </div>
