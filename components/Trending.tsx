@@ -9,6 +9,7 @@ export type TrendingMedia = {
   title: string;
   poster_path: string;
   vote_average: number;
+  original_name: string;
 };
 
 type TrendingProps = {
@@ -20,11 +21,13 @@ const Trending: React.FC<TrendingProps> = ({ results }) => (
     <h1 className={styles.title}>Trending</h1>
     <div className={styles.content}>
       <ul className={styles.list}>
-        {results.map((item, index) => (
+        {results.map(item => (
           <li key={item.id} className={styles.item}>
-            <img src={POSTER_URL + item.poster_path}  alt={item.title} />
+            <div className={styles.image}>
+              <img src={POSTER_URL + item.poster_path}  alt={item.title} />
+            </div>
             <div className={styles.labels}>
-              <label style={{ color: 'azure' }}>{index + 1}</label>
+              <label style={{ color: 'azure' }}>{item.title}</label>
               <label style={{ color: 'gold' }}>{item.vote_average} / 10</label>
             </div>
           </li>

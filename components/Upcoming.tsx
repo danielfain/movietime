@@ -22,7 +22,9 @@ const Upcoming: React.FC<UpcomingProps> = ({ results }) => (
       <ul className={styles.list}>
         {results.map(item => (
           <li key={item.id} className={styles.item}>
-            <img src={POSTER_URL + item.poster_path}  alt={item.title} />
+            <div className={styles.image}>
+              <img src={POSTER_URL + item.poster_path} alt={item.title} />
+            </div>
             <div className={styles.labels}>
               <label style={{ color: 'azure' }}>{item.title}</label>
               <label style={{ color: 'gold' }}>{new Date(item.release_date).toDateString().slice(4, 10)}</label>
