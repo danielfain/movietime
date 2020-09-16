@@ -4,8 +4,6 @@ import { GetStaticProps } from 'next';
 import styles from '../../../styles/MovieTopRated.module.css';
 import { getTopRated } from '../../api/top/rated';
 
-const POSTER_URL = process.env.REACT_APP_IN_THEATERS_POSTER_URL || '';
-
 export type TopRatedMedia = {
   id: number;
   title: string;
@@ -24,7 +22,7 @@ const Rated: React.FC<TopProps> = ({ movies }) => (
     <h1 className={styles.title}>Top Rated Movies</h1>
     {movies.map(movie => (
       <div key={movie.id} className={styles.poster}>
-        <img src={POSTER_URL + movie.poster_path} alt={movie.title} />
+        <img src={'https://image.tmdb.org/t/p/w200' + movie.poster_path} alt={movie.title} />
         <div className={styles.labels}>
           <label style={{ color: 'azure' }}>{movie.title}</label>
           <label style={{ color: 'gold' }}>{movie.vote_average} / 10</label>

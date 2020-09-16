@@ -2,8 +2,6 @@ import React from 'react';
 
 import styles from '../styles/Trending.module.css';
 
-const POSTER_URL = process.env.REACT_APP_TRENDING_POSTER_URL;
-
 export type TrendingMedia = {
   id: number;
   title: string;
@@ -24,7 +22,7 @@ const Trending: React.FC<TrendingProps> = ({ results }) => (
         {results.map(item => (
           <li key={item.id} className={styles.item}>
             <div className={styles.image}>
-              <img src={POSTER_URL + item.poster_path}  alt={item.title} />
+              <img src={'https://image.tmdb.org/t/p/w92' + item.poster_path}  alt={item.title} />
             </div>
             <div className={styles.labels}>
               <label style={{ color: 'azure' }}>{item.title}</label>

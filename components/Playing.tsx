@@ -2,8 +2,6 @@ import React from 'react';
 
 import styles from '../styles/Playing.module.css';
 
-const POSTER_URL = process.env.REACT_APP_IN_THEATERS_POSTER_URL;
-
 export type PlayingMedia = {
   id: number;
   title: string;
@@ -21,7 +19,7 @@ const Playing: React.FC<PlayingProps> = ({ results }) => {
       <h1 className={styles.title}>In Theaters</h1>
       <div className={styles.posters}>
         {results.map(item => (
-          <img src={POSTER_URL + item.poster_path}  alt={item.title} key={item.id} />
+          <img src={'https://image.tmdb.org/t/p/w200' + item.poster_path}  alt={item.title} key={item.id} />
         ))}
       </div>
     </div>
