@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import styles from '../../../styles/MovieTopRated.module.css';
 import { getTopRated } from '../../api/top/rated';
 
-const POSTER_URL = process.env.REACT_APP_IN_THEATERS_POSTER_URL;
+const POSTER_URL = process.env.REACT_APP_IN_THEATERS_POSTER_URL || '';
 
 export type TopRatedMedia = {
   id: number;
