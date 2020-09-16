@@ -5,7 +5,7 @@
     grid-template-areas:
       "title title title title"
       "upcoming-container movie-container tv-container trending-container"
-      ". playing-container playing-container .";
+      "upcoming-container playing-container playing-container trending-container";
 }
 
 @media only screen and (max-width: 1200px) {

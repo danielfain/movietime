@@ -16,7 +16,7 @@
     grid-template-columns: repeat(3, 200px);
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1300px) {
     .posters {
         grid-template-columns: repeat(2, 200px);
     }

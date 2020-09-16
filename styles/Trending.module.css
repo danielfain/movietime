@@ -9,6 +9,12 @@
     border-color: azure;
 }
 
+@media only screen and (max-width: 800px) {
+    .container {
+        border: none;
+    }
+}
+
 .title {
     grid-area: trending-title;
     display: flex;
