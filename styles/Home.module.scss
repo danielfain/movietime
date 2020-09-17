@@ -1,0 +1,45 @@
+@import "definitions";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-template-areas:
+      "title"
+      "movie-container"
+      "tv-container"
+      "upcoming-container"
+      "trending-container"
+      "playing-container";
+}
+
+@media #{$mq-tablet} {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+        grid-template-areas:
+          "title title"
+          "movie-container tv-container"
+          "upcoming-container trending-container"
+          "playing-container  playing-container";
+    }
+}
+
+@media #{$mq-720p} {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+        grid-template-areas:
+          "title title title title"
+          "upcoming-container movie-container tv-container trending-container"
+          "upcoming-container playing-container playing-container trending-container";
+    }
+}
+
+@media #{$mq-2k} {
+  .container {
+    margin: 0 12%;
+  }
+}

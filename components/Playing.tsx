@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/Playing.module.css';
+import styles from '../styles/Playing.module.scss';
 
 export type PlayingMedia = {
   id: number;

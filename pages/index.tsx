@@ -17,7 +17,7 @@ import { getTrending } from './api/trending';
 import { getPlaying } from './api/playing';
 import { getUpcoming } from './api/upcoming';
 
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 type HomeProps = {
   trending: Array<TrendingMedia>;

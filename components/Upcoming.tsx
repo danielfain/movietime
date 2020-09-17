@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/Upcoming.module.css';
+import styles from '../styles/Upcoming.module.scss';
 
 export type UpcomingMedia = {
   id: number;

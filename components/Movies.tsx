@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import styles from '../styles/Movies.module.css';
+import styles from '../styles/Movies.module.scss';
 
 const Movies: React.FC = () => (
   <div className={styles.container}>

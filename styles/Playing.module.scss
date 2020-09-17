@@ -1,3 +1,5 @@
+@import "definitions";
+
 .container {
     grid-area: playing-container;
     display: flex;
@@ -13,17 +15,23 @@
 .posters {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(1, 200px);
 }
 
-@media only screen and (max-width: 1300px) {
+@media #{$mq-tablet} {
     .posters {
         grid-template-columns: repeat(2, 200px);
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media #{$mq-1080p} {
     .posters {
-        grid-template-columns: repeat(1, 200px);
+        grid-template-columns: repeat(3, 200px);
+    }
+}
+
+@media #{$mq-2k} {
+    .posters {
+        grid-template-columns: repeat(4, 200px);
     }
 }

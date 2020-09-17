@@ -1,29 +1,25 @@
+@import "definitions";
+
 .container {
-    grid-area: trending-container;
+    grid-area: upcoming-container;
     display: grid;
     grid-template-rows: 5rem;
-    grid-template-areas:
-      "trending-title"
-      "trending-content";
-    border-left-style: ridge;
-    border-color: azure;
 }
 
-@media only screen and (max-width: 800px) {
+@media #{$mq-720p} {
     .container {
-        border: none;
+        border-right-style: ridge;
+        border-color: azure;
     }
 }
 
 .title {
-    grid-area: trending-title;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .content {
-    grid-area: trending-content;
     display: flex;
     justify-content: center;
 }
@@ -42,6 +38,7 @@
 .image {
     display: flex;
     justify-content: center;
+    margin-bottom: .5em;
 }
 
 .labels {

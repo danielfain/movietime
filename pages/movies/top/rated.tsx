@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 
-import styles from '../../../styles/MovieTopRated.module.css';
+import styles from '../../../styles/MovieTopRated.module.scss';
 import { getTopRated } from '../../api/top/rated';
 
 export type TopRatedMedia = {

@@ -1,0 +1,15 @@
+// Breakpoints
+$bp-tablet: 768px;
+$bp-720p: 1280px;
+$bp-1080p: 1920px;
+$bp-2k: 2560px;
+
+// Media queries
+$mq-tablet: "(min-width: #{$bp-tablet})";
+$mq-720p: "(min-width: #{$bp-720p})";
+$mq-1080p: "(min-width: #{$bp-1080p})";
+$mq-2k: "(min-width: #{$bp-2k})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+// Font-size
+$base-font-size: 1em;

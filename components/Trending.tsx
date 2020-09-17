@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/Trending.module.css';
+import styles from '../styles/Trending.module.scss';
 
 export type TrendingMedia = {
   id: number;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import styles from '../styles/Shows.module.css';
+import styles from '../styles/Shows.module.scss';
 
 const Shows: React.FC = () => (
   <div className={styles.container}>
